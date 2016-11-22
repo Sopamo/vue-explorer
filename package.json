@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/Sopamo/vue-explorer/issues"
   },
-  "homepage": "https://github.com/Sopamo/vue-explorer#readme"
+  "homepage": "https://github.com/Sopamo/vue-explorer#readme",
+  "dependencies": {
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "vue": "^2.0.0"
+  }
 }
