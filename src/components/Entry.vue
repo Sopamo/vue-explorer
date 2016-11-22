@@ -21,13 +21,14 @@
 </style>
 
 <template>
-  <div class="entry" v-on:dblclick="handleSelect">
+  <div class="entry" :class="{active: isActive}" v-on:dblclick="handleGoInto" v-on:click="handleSelect">
     <div class="part"><img class="icon" :src="icon">{{ entry.name }}</div>
+    <div class="part">{{ entry.modified }}</div>
   </div>
 </template>
 
 <script>
-  import EventBus from '../EventBus'
+  import Main from '../Main'
 
   var folder = require('../images/folder.svg')
   var file = require('../images/file.svg')
@@ -36,7 +37,16 @@
     props: ['entry', 'path'],
     methods: {
       handleSelect () {
-        EventBus.$emit('selectFile', '/' + this.path.join('/') + '/' + this.entry.name)
+        Main.$emit('selectFile', this.fullPath)
+      },
+      handleGoInto () {
+        if (this.entry.type === 'folder') {
+          let path = JSON.parse(JSON.stringify(this.path))
+          path.push(this.entry.name)
+          Main.$emit('setPath', path)
+        } else {
+          this.handleSelect()
+        }
       }
     },
     computed: {
@@ -45,6 +55,12 @@
           return folder
         }
         return file
+      },
+      fullPath () {
+        return '/' + this.path.join('/') + '/' + this.entry.name
+      },
+      isActive () {
+        return Main.activeFile === this.fullPath
       }
     }
   }

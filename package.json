@@ -2,7 +2,7 @@
   "name": "vue-explorer",
   "version": "0.1.0",
   "description": "An extensible (file) explorer component for vue.js",
-  "main": "index.js",
+  "main": "src/Main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sopamo/vue-explorer.git"

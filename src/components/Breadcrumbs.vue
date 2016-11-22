@@ -76,7 +76,7 @@
 </template>
 
 <script>
-  import EventBus from '../EventBus'
+  import Main from '../Main'
   import Breadcrumb from './Breadcrumb'
   export default {
     props: ['path'],
@@ -87,13 +87,13 @@
           return
         }
         path.pop()
-        EventBus.$emit('setPath', path)
+        Main.$emit('setPath', path)
       },
       goTo (index) {
         console.log(index)
         let path = JSON.parse(JSON.stringify(this.path))
         path = path.slice(0, index + 1)
-        EventBus.$emit('setPath', path)
+        Main.$emit('setPath', path)
       }
     },
     components: {
