@@ -1,0 +1,21 @@
+{
+  "name": "vue-explorer",
+  "version": "0.1.0",
+  "description": "An extensible (file) explorer component for vue.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sopamo/vue-explorer.git"
+  },
+  "keywords": [
+    "vue",
+    "file",
+    "explorer"
+  ],
+  "author": "Sopamo GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sopamo/vue-explorer/issues"
+  },
+  "homepage": "https://github.com/Sopamo/vue-explorer#readme"
+}
